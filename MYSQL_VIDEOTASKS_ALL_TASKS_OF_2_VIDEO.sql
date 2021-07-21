@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_«Операторы, фильтрация, сортировка и ограничение»;
-CREATE DATABASE mysql_videotasks_all_tasks_of_«Операторы, фильтрация, сортировка и ограничение»;
-USE mysql_videotasks_all_tasks_of_«Операторы, фильтрация, сортировка и ограничение»;
+DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_В«РћРїРµСЂР°С‚РѕСЂС‹, С„РёР»СЊС‚СЂР°С†РёСЏ, СЃРѕСЂС‚РёСЂРѕРІРєР° Рё РѕРіСЂР°РЅРёС‡РµРЅРёРµВ»;
+CREATE DATABASE mysql_videotasks_all_tasks_of_В«РћРїРµСЂР°С‚РѕСЂС‹, С„РёР»СЊС‚СЂР°С†РёСЏ, СЃРѕСЂС‚РёСЂРѕРІРєР° Рё РѕРіСЂР°РЅРёС‡РµРЅРёРµВ»;
+USE mysql_videotasks_all_tasks_of_В«РћРїРµСЂР°С‚РѕСЂС‹, С„РёР»СЊС‚СЂР°С†РёСЏ, СЃРѕСЂС‚РёСЂРѕРІРєР° Рё РѕРіСЂР°РЅРёС‡РµРЅРёРµВ»;
 
 DROP TABLE IF EXISTS `users_1`;
 CREATE TABLE `users_1` (
@@ -12,7 +12,7 @@ CREATE TABLE `users_1` (
   `updated_at_true` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Пусть в таблице users поля created_at и updated_at оказались незаполненными. Заполните их текущими датой и временем.';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='РџСѓСЃС‚СЊ РІ С‚Р°Р±Р»РёС†Рµ users РїРѕР»СЏ created_at Рё updated_at РѕРєР°Р·Р°Р»РёСЃСЊ РЅРµР·Р°РїРѕР»РЅРµРЅРЅС‹РјРё. Р—Р°РїРѕР»РЅРёС‚Рµ РёС… С‚РµРєСѓС‰РёРјРё РґР°С‚РѕР№ Рё РІСЂРµРјРµРЅРµРј.';
 
 DROP TABLE IF EXISTS `users_2`;
 CREATE TABLE `users_2` (
@@ -24,7 +24,7 @@ CREATE TABLE `users_2` (
   `updated_at_true` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Таблица users была неудачно спроектирована. Записи created_at и updated_at были заданы типом VARCHAR и в них долгое время помещались значения в формате 20.10.2017 8:10. Необходимо преобразовать поля к типу DATETIME, сохранив введённые ранее значения.';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='РўР°Р±Р»РёС†Р° users Р±С‹Р»Р° РЅРµСѓРґР°С‡РЅРѕ СЃРїСЂРѕРµРєС‚РёСЂРѕРІР°РЅР°. Р—Р°РїРёСЃРё created_at Рё updated_at Р±С‹Р»Рё Р·Р°РґР°РЅС‹ С‚РёРїРѕРј VARCHAR Рё РІ РЅРёС… РґРѕР»РіРѕРµ РІСЂРµРјСЏ РїРѕРјРµС‰Р°Р»РёСЃСЊ Р·РЅР°С‡РµРЅРёСЏ РІ С„РѕСЂРјР°С‚Рµ 20.10.2017 8:10. РќРµРѕР±С…РѕРґРёРјРѕ РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РїРѕР»СЏ Рє С‚РёРїСѓ DATETIME, СЃРѕС…СЂР°РЅРёРІ РІРІРµРґС‘РЅРЅС‹Рµ СЂР°РЅРµРµ Р·РЅР°С‡РµРЅРёСЏ.';
 
 DROP TABLE IF EXISTS `storehouses_products`;
 CREATE TABLE `storehouses_products` (
@@ -32,7 +32,7 @@ CREATE TABLE `storehouses_products` (
   `value` bigint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='В таблице складских запасов storehouses_products в поле value могут встречаться самые разные цифры: 0, если товар закончился и выше нуля, если на складе имеются запасы. Необходимо отсортировать записи таким образом, чтобы они выводились в порядке увеличения значения value. Однако нулевые запасы должны выводиться в конце, после всех записей.';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Р’ С‚Р°Р±Р»РёС†Рµ СЃРєР»Р°РґСЃРєРёС… Р·Р°РїР°СЃРѕРІ storehouses_products РІ РїРѕР»Рµ value РјРѕРіСѓС‚ РІСЃС‚СЂРµС‡Р°С‚СЊСЃСЏ СЃР°РјС‹Рµ СЂР°Р·РЅС‹Рµ С†РёС„СЂС‹: 0, РµСЃР»Рё С‚РѕРІР°СЂ Р·Р°РєРѕРЅС‡РёР»СЃСЏ Рё РІС‹С€Рµ РЅСѓР»СЏ, РµСЃР»Рё РЅР° СЃРєР»Р°РґРµ РёРјРµСЋС‚СЃСЏ Р·Р°РїР°СЃС‹. РќРµРѕР±С…РѕРґРёРјРѕ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃРё С‚Р°РєРёРј РѕР±СЂР°Р·РѕРј, С‡С‚РѕР±С‹ РѕРЅРё РІС‹РІРѕРґРёР»РёСЃСЊ РІ РїРѕСЂСЏРґРєРµ СѓРІРµР»РёС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ value. РћРґРЅР°РєРѕ РЅСѓР»РµРІС‹Рµ Р·Р°РїР°СЃС‹ РґРѕР»Р¶РЅС‹ РІС‹РІРѕРґРёС‚СЊСЃСЏ РІ РєРѕРЅС†Рµ, РїРѕСЃР»Рµ РІСЃРµС… Р·Р°РїРёСЃРµР№.';
 
 DROP TABLE IF EXISTS `users_3`;
 CREATE TABLE `users_3` (
@@ -41,7 +41,7 @@ CREATE TABLE `users_3` (
   `birthday_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(по желанию) Из таблицы users необходимо извлечь пользователей, родившихся в августе и мае. Месяцы заданы в виде списка английских названий (may, august)';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(РїРѕ Р¶РµР»Р°РЅРёСЋ) РР· С‚Р°Р±Р»РёС†С‹ users РЅРµРѕР±С…РѕРґРёРјРѕ РёР·РІР»РµС‡СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№, СЂРѕРґРёРІС€РёС…СЃСЏ РІ Р°РІРіСѓСЃС‚Рµ Рё РјР°Рµ. РњРµСЃСЏС†С‹ Р·Р°РґР°РЅС‹ РІ РІРёРґРµ СЃРїРёСЃРєР° Р°РЅРіР»РёР№СЃРєРёС… РЅР°Р·РІР°РЅРёР№ (may, august)';
 
 DROP TABLE IF EXISTS `catalogs`;
 CREATE TABLE `catalogs` (
@@ -50,12 +50,12 @@ CREATE TABLE `catalogs` (
   `catalog_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(по желанию) Из таблицы catalogs извлекаются записи при помощи запроса. SELECT * FROM catalogs WHERE id IN (5, 1, 2); Отсортируйте записи в порядке, заданном в списке IN.';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(РїРѕ Р¶РµР»Р°РЅРёСЋ) РР· С‚Р°Р±Р»РёС†С‹ catalogs РёР·РІР»РµРєР°СЋС‚СЃСЏ Р·Р°РїРёСЃРё РїСЂРё РїРѕРјРѕС‰Рё Р·Р°РїСЂРѕСЃР°. SELECT * FROM catalogs WHERE id IN (5, 1, 2); РћС‚СЃРѕСЂС‚РёСЂСѓР№С‚Рµ Р·Р°РїРёСЃРё РІ РїРѕСЂСЏРґРєРµ, Р·Р°РґР°РЅРЅРѕРј РІ СЃРїРёСЃРєРµ IN.';
 
 
-DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_«Агрегация данных»;
-CREATE DATABASE mysql_videotasks_all_tasks_of_2_video_«Агрегация данных»;
-USE mysql_videotasks_all_tasks_of_2_video_«Агрегация данных»;
+DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_В«РђРіСЂРµРіР°С†РёСЏ РґР°РЅРЅС‹С…В»;
+CREATE DATABASE mysql_videotasks_all_tasks_of_2_video_В«РђРіСЂРµРіР°С†РёСЏ РґР°РЅРЅС‹С…В»;
+USE mysql_videotasks_all_tasks_of_2_video_В«РђРіСЂРµРіР°С†РёСЏ РґР°РЅРЅС‹С…В»;
 
 DROP TABLE IF EXISTS `users_2`;
 CREATE TABLE `users_2` (
@@ -67,8 +67,8 @@ CREATE TABLE `users_2` (
   `updated_at_true` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Подсчитайте средний возраст пользователей в таблице users;
-Подсчитайте количество дней рождения, которые приходятся на каждый из дней недели. Следует учесть, что необходимы дни недели текущего года, а не года рождения.';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='РџРѕРґСЃС‡РёС‚Р°Р№С‚Рµ СЃСЂРµРґРЅРёР№ РІРѕР·СЂР°СЃС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РІ С‚Р°Р±Р»РёС†Рµ users;
+РџРѕРґСЃС‡РёС‚Р°Р№С‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№ СЂРѕР¶РґРµРЅРёСЏ, РєРѕС‚РѕСЂС‹Рµ РїСЂРёС…РѕРґСЏС‚СЃСЏ РЅР° РєР°Р¶РґС‹Р№ РёР· РґРЅРµР№ РЅРµРґРµР»Рё. РЎР»РµРґСѓРµС‚ СѓС‡РµСЃС‚СЊ, С‡С‚Рѕ РЅРµРѕР±С…РѕРґРёРјС‹ РґРЅРё РЅРµРґРµР»Рё С‚РµРєСѓС‰РµРіРѕ РіРѕРґР°, Р° РЅРµ РіРѕРґР° СЂРѕР¶РґРµРЅРёСЏ.';
 
 DROP TABLE IF EXISTS `storehouses_products`;
 CREATE TABLE `storehouses_products` (
@@ -76,4 +76,4 @@ CREATE TABLE `storehouses_products` (
   `value` bigint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(по желанию) Подсчитайте произведение чисел в столбце таблицы.';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='(РїРѕ Р¶РµР»Р°РЅРёСЋ) РџРѕРґСЃС‡РёС‚Р°Р№С‚Рµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РёСЃРµР» РІ СЃС‚РѕР»Р±С†Рµ С‚Р°Р±Р»РёС†С‹.';
