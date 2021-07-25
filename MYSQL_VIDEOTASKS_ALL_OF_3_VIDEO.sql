@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_«Сложные запросы»;
-CREATE DATABASE mysql_videotasks_all_tasks_of_«Сложные запросы»;
-USE mysql_videotasks_all_tasks_of_«Сложные запросы»;
+DROP DATABASE IF EXISTS mysql_videotasks_all_tasks_of_В«РЎР»РѕР¶РЅС‹Рµ Р·Р°РїСЂРѕСЃС‹В»;
+CREATE DATABASE mysql_videotasks_all_tasks_of_В«РЎР»РѕР¶РЅС‹Рµ Р·Р°РїСЂРѕСЃС‹В»;
+USE mysql_videotasks_all_tasks_of_В«РЎР»РѕР¶РЅС‹Рµ Р·Р°РїСЂРѕСЃС‹В»;
 
--- Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине.
+-- РЎРѕСЃС‚Р°РІСЊС‚Рµ СЃРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ users, РєРѕС‚РѕСЂС‹Рµ РѕСЃСѓС‰РµСЃС‚РІРёР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ Р·Р°РєР°Р· orders РІ РёРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅРµ.
 DROP TABLE IF EXISTS `users_1`;
 CREATE TABLE `users_1` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -27,11 +27,11 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 
--- Выведите список товаров products и разделов catalogs, который соответствует товару.
+-- Р’С‹РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ products Рё СЂР°Р·РґРµР»РѕРІ catalogs, РєРѕС‚РѕСЂС‹Р№ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚РѕРІР°СЂСѓ.
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `price` decimal(11,4) DEFAULT NULL COMMENT 'Цена',
+  `price` decimal(11,4) DEFAULT NULL COMMENT 'Г–ГҐГ­Г ',
   `catalog_id_products` int unsigned DEFAULT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -50,7 +50,7 @@ CREATE TABLE `catalogs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 
--- (по желанию) Пусть имеется таблица рейсов flights (id, from, to) и таблица городов cities (label, name). Поля from, to и label содержат английские названия городов, поле name — русское. Выведите список рейсов flights с русскими названиями городов.
+-- (РїРѕ Р¶РµР»Р°РЅРёСЋ) РџСѓСЃС‚СЊ РёРјРµРµС‚СЃСЏ С‚Р°Р±Р»РёС†Р° СЂРµР№СЃРѕРІ flights (id, from, to) Рё С‚Р°Р±Р»РёС†Р° РіРѕСЂРѕРґРѕРІ cities (label, name). РџРѕР»СЏ from, to Рё label СЃРѕРґРµСЂР¶Р°С‚ Р°РЅРіР»РёР№СЃРєРёРµ РЅР°Р·РІР°РЅРёСЏ РіРѕСЂРѕРґРѕРІ, РїРѕР»Рµ name вЂ” СЂСѓСЃСЃРєРѕРµ. Р’С‹РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє СЂРµР№СЃРѕРІ flights СЃ СЂСѓСЃСЃРєРёРјРё РЅР°Р·РІР°РЅРёСЏРјРё РіРѕСЂРѕРґРѕРІ.
 DROP TABLE IF EXISTS `flights`;
 CREATE TABLE `flights` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
